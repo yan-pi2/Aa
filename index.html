@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', serif;
+      background: linear-gradient(to bottom right, #ffccd2, #ff99cc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Entrance - Password prompt */
+    .container {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      text-align: center;
+      display: block;
+      border: 2px solid #ff66b2;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff66b2;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .password-input {
+      padding: 10px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      width: 80%;
+      margin: 20px 0;
+      background: #fff;
+      color: #ff66b2;
+      text-align: center;
+    }
+
+    .submit-btn {
+      padding: 12px 25px;
+      background-color: #ff66b2;
+      color: white;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff3385;
+    }
+
+    /* Inside design - After password is entered */
+    .message {
+      font-size: 1.2em;
+      color: #ff66b2;
+      display: none;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      border: 2px solid #ffcc99;
+    }
+
+    .heart {
+      font-size: 2.5em;
+      animation: pulse 1s infinite;
+    }
+
+    .palace {
+      background: linear-gradient(to bottom right, #b3986b, #6e4b3b);
+      padding: 20px;
+      border-radius: 15px;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      font-family: 'Georgia', serif;
+      border: 3px solid #ffcc99;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .palace h1 {
+      font-size: 1.8em;
+      font-family: 'Dancing Script', cursive;
+      color: #ffcc99;
+      letter-spacing: 3px;
+    }
+
+    .palace p {
+      font-size: 1em;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    /* Animation for the heart */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2em;
+      }
+      .password-input {
+        font-size: 1.1em;
+      }
+      .submit-btn {
+        font-size: 1.1em;
+      }
+      .palace {
+        padding: 15px;
+      }
+      .palace h1 {
+        font-size: 1.5em;
+      }
+      .palace p {
+        font-size: 1em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Password Prompt -->
+  <div id="passwordPrompt" class="container">
+    <h1>💖 Welcome to My Heart 💖</h1>
+    <p>💌 Please enter the password to see my love message 💌</p>
+    <input type="password" id="passwordInput" class="password-input" placeholder="Enter Password" />
+    <button class="submit-btn" onclick="checkPassword()">Submit 💘</button>
+  </div>
+
+  <!-- Love Message - After Password -->
+  <div id="message" class="message">
+    <div class="palace">
+      <h1>💖 I Love You, Martha 💖</h1>
+      <p class="heart">💘🌹 My heart beats for you, Martha. 🌹💘</p>
+      <p>🌸 I think about you every moment, Martha. You are my sunshine, my joy. 🌸</p>
+      <p>💌 You are the one who makes my world a beautiful place, Martha. 💌</p>
+      <p>Forever and always, with all my love, 💕</p>
+    </div>
+  </div>
+
+  <script>
+    // Show the password prompt on page load
+    window.onload = function() {
+      document.getElementById("passwordPrompt").style.display = "block";
+    }
+
+    // Check the password and reveal the love message
+    function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      if (password === "123786123") { //123786123
+        document.getElementById("passwordPrompt").style.display = "none";
+        document.getElementById("message").style.display = "block";
+      } else {
+        alert("❌ Incorrect password. Please try again. ❌");
+      }
+    }
+  </script>
+
+</body>
+</html>
